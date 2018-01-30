@@ -1,3 +1,7 @@
+/*
+*	Simple card game.
+*	(c) 2018, Ziyu Selina Wang.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 int main()

@@ -5,7 +5,7 @@
 Modify the link below so it points to the `ex01` directory in your
 student repository.
 
-[Here is a link to the ex01 directory in my repository](https://github.com/YOUR_GITHUB_USERNAME_HERE/ExercisesInC/tree/master/exercises/ex01)
+[Here is a link to the ex01 directory in my repository](https://github.com/SelinaWang/ExercisesInC/tree/master/exercises/ex01)
 
 ### Think OS Chapter 1 reading questions
 
