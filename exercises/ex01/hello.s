@@ -1,9 +1,9 @@
 	.file	"hello.c"
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .LC0:
-	.string	"Hello, World!"
+	.string	"y is %d\n"
 .LC1:
-	.string	"c is %d\n"
+	.string	"Hello, World!"
 	.text
 	.globl	main
 	.type	main, @function
@@ -12,13 +12,13 @@ main:
 	.cfi_startproc
 	subq	$8, %rsp
 	.cfi_def_cfa_offset 16
-	movl	$.LC0, %edi
-	call	puts
-	movl	$7, %edx
-	movl	$.LC1, %esi
+	movl	$6, %edx
+	movl	$.LC0, %esi
 	movl	$1, %edi
 	movl	$0, %eax
 	call	__printf_chk
+	movl	$.LC1, %edi
+	call	puts
 	movl	$0, %eax
 	addq	$8, %rsp
 	.cfi_def_cfa_offset 8
