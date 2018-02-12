@@ -5,7 +5,7 @@
 Modify the link below so it points to the `ex02.5` directory in your
 student repository.
 
-[Here is a link to the ex02.5 directory in my repository](https://github.com/YOUR_GITHUB_USERNAME_HERE/ExercisesInC/tree/master/exercises/ex02.5)
+[Here is a link to the ex02.5 directory in my repository](https://github.com/SelinaWang/ExercisesInC/tree/master/exercises/ex02.5)
 
 ### Think OS Chapter 3 reading questions
 
@@ -27,4 +27,3 @@ Ignoring the details of the encoding scheme, how many different characters can b
 7) What Python data structure would you use to represent a sparse array?
 
 8) What is a context switch?
-
