@@ -18,7 +18,7 @@ Ignoring the details of the encoding scheme, how many different characters can b
 2^32 = 4294967296 characters.
 3) What is the difference between "memory" and "storage" as defined in *Think OS*?
 Memory is volatile and when the computer shuts down the contents of memory are lost.
-Storage is non-volatile s                                                                                          o they are used for long-term storage.
+Storage is non-volatile so they are used for long-term storage.
 4) What is the difference between a GiB and a GB?  What is the percentage difference in their sizes?
 A GiB is 2^30 bytes and a GB is 10^9 bytes. The percentage difference is ((2^30)/(10^9)-1)x100%=7.374182%.
 5) How does the virtual memory system help isolate processes from each other?
