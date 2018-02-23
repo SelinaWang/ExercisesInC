@@ -2,14 +2,14 @@
 
 ### C Exercises
 
-Modify the link below so it points to the `ex02.5` directory in your
+Modify the link below so it points to the `ex03` directory in your
 student repository.
 
 [Here is a link to the ex02.5 directory in my repository](https://github.com/SelinaWang/ExercisesInC/tree/master/exercises/ex02.5)
 
-### Think OS Chapter 3 reading questions
+### Think OS Chapter 4 reading questions
 
-### Virtual memory
+**Files and file systems**
 
 1) The Georgian alphabet has 33 letters.  How many bit are needed to specify a letter?
 6 bits because 2^5 < 33 < 2^6.
