@@ -60,5 +60,3 @@ ssize_t Recvfrom(int fd, void *ptr, size_t nbytes, int flags,
 		 struct sockaddr *sa, socklen_t *salenptr);
 void err_sys (char *fmt, ...);
 void err_quit (char *fmt, ...);
-
-
