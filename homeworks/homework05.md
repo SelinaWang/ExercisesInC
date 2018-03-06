@@ -35,7 +35,7 @@ b11000001010100000000000000000000. This value as an integer is 3243245568 as an 
 5) Write a function that takes a string and converts from lower-case to upper-case by flipping the sixth bit.  
 As a challenge, you can make a faster version by reading the string 32 or 64 bits at a time, rather than one
 character at a time.  This optimization is made easier if the length of the string is a multiple of 4 or 8 bytes.
-`
+```
 char* lower_to_upper(char* str) {
   int len = strlen(str);
   char* new_str = malloc(len*sizeof(char));
@@ -46,4 +46,4 @@ char* lower_to_upper(char* str) {
   return new_str;  
 }
 
-`
+```
