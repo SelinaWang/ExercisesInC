@@ -5,7 +5,7 @@
 #include <glib.h>
 
 void iterator(gpointer key, gpointer value, gpointer user_data) {
- printf(user_data, *(gint*)key, value);
+ printf(user_data, key, value);
 }
 
 int main(int argc, char** argv) {
@@ -14,8 +14,8 @@ int main(int argc, char** argv) {
 
   GHashTable* hash = g_hash_table_new(g_str_hash, g_str_equal);
   gchar str[1024];
-  int i;
-  while(fscanf(f, "%1023s", str) == 1){
+  while (fscanf(f, "%1023s", str) != EOF){
+    // printf("%s\n",str);
     if (isalnum(str)) {
       if (g_hash_table_contains(hash, str)) {
         g_hash_table_replace(hash, g_strdup(str), (gpointer)(((gint64)g_hash_table_lookup(hash, str))+1));
@@ -26,7 +26,16 @@ int main(int argc, char** argv) {
     }
   }
 
-  g_hash_table_foreach(hash, (GHFunc)iterator, "%s: %d");
+  // GHashTableIter iter;
+  // gpointer key, value;
+  //
+  // g_hash_table_iter_init (&iter, hash);
+  // while (g_hash_table_iter_next (&iter, &key, &value))
+  //   {
+  //     printf("%s: %s\n",(char *)key,(char *)value);
+  //   }
+
+  g_hash_table_foreach(hash, (GHFunc)iterator, "%s: %s\n");
   g_hash_table_destroy(hash);
   fclose(f);
 
