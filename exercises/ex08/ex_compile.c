@@ -6,6 +6,7 @@ From http://www.ibm.com/developerworks/linux/tutorials/l-glib/
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <glib.h>
 
 int main(int argc, char** argv) {
