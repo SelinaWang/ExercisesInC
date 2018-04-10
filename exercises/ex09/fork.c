@@ -18,6 +18,7 @@ License: MIT License https://opensource.org/licenses/MIT
 // errno is an external global variable that contains
 // error information
 extern int errno;
+char* global_str = "global";
 
 
 // get_seconds returns the number of seconds since the
@@ -34,6 +35,18 @@ void child_code(int i)
 {
     sleep(i);
     printf("Hello from child %d.\n", i);
+    printf("child errno %i.\n", errno); // if the child shares the same global
+    // the errno should be the same
+    printf("global string value %p.\n", global_str); // if the child shares the
+    // static segment with the parent, they should see the same global variable
+    int *local_array = (int *)malloc(sizeof(int)*(5)); // allocate space for 5 ints
+    local_array[i] = 1; // set the int in local_array at postion i to be 1;
+    for (int i = 0; i < 5; i++) {
+        printf("%i", local_array[i]); // output is different than parent's local_array
+        // result as well as other children's, proving that they do not use the same stack segment
+    }
+    printf("\n");
+
 }
 
 // main takes two parameters: argc is the number of command-line
@@ -79,6 +92,28 @@ int main(int argc, char *argv[])
 
     /* parent continues */
     printf("Hello from the parent.\n");
+    printf("parent errno %i.\n", errno); // if the child shares the same global
+    // the errno should be the same
+    // Results show that the errnos are the same for parent and child processes
+    // so they do share the same global segment since errno is a global variable
+
+    printf("global string value %p.\n", global_str); // if the child shares the
+    // static segment with the parent, they should see the same global variable
+
+    int *local_array = (int *)malloc(sizeof(int)*(num_children+1)); //allocate
+    // ints again cuz was getting fork.c:108:5: error: ‘local_array’ undeclared
+    // (first use in this function). The proves that they do not share the same
+    // stack segment since stack stored local variables and that local_array was
+    // initialized in child node
+
+    local_array[num_children] = 9; // set the int at number of childen to be 9
+
+    for (int i = 0; i < num_children+1; i++) {
+        printf("%i", local_array[i]); // The output is the number of 0s = num_children,
+        // followed by a 9 set by the parent,proving that the parent and children
+        // uses the same heap segment
+    }
+    printf("\n");
 
     for (i=0; i<num_children; i++) {
         pid = wait(&status);
