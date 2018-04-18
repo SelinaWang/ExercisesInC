@@ -5,11 +5,13 @@
 Modify the link below so it points to the `ex12` directory in your
 student repository.  That's right, Homework 10 is to do Exercise 12.
 
-[Here is a link to the ex12 directory in my repository](https://github.com/YOUR_GITHUB_USERNAME_HERE/ExercisesInC/tree/master/exercises/ex12)
+[Here is a link to the ex12 directory in my repository](https://github.com/SelinaWang/ExercisesInC/tree/master/exercises/ex12)
 
 ### Think OS Chapter 10 reading questions
 
 1) What does it mean to say that a data structure is thread safe?
+
+Thread-safe code only manipulates shared data structures in a manner that ensures that all threads behave properly and fulfill their design specifications without unintended interaction.
 
 2) In the circular buffer implementation of a queue, why is the maximum number of elements in the queue `n-1`,
 if `n` is the size of the array?
@@ -26,7 +28,3 @@ the queue in an inconsistent state.
 7) Do you have to lock the mutex to signal a condition variable?
 
 8) Does the condition have to be true when you signal a condition variable?
-
-
-
-
