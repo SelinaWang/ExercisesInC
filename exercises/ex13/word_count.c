@@ -147,8 +147,9 @@ int main(int argc, char** argv)
     g_sequence_foreach(seq, (GFunc) pair_printor, NULL);
 
     // try (unsuccessfully) to free everything
-    g_sequence_free(seq);
     g_hash_table_destroy(hash);
+    g_sequence_free(seq);
+
 
     return 0;
 }
