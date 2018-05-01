@@ -50,6 +50,7 @@ void printor(gpointer key, gpointer value, gpointer user_data)
 /* Iterator that adds key-value pairs to a sequence. */
 void accumulator(gpointer key, gpointer value, gpointer user_data)
 {
+  // some sort of glib version of string_copy()
     GSequence *seq = (GSequence *) user_data;
     Pair *pair = g_new(Pair, 1);
     pair->word = (gchar *) key;
